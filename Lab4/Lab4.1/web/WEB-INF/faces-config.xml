@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+    
+    <!-- Rule from index to greetings -->
+    <navigation-rule>
+        <description>User-Defined Navigation from Index</description>
+        <from-view-id>/index.xhtml</from-view-id>
+        <navigation-case>
+            <description>User-Defined Navigation to Greetings</description>
+            <from-outcome>Success</from-outcome>
+            <to-view-id>/greetings.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <!-- Rule from greetings to index -->
+    <navigation-rule>
+        <from-view-id>/greetings.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>Success</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <!-- Rule to Exception-Page -->
+    <navigation-rule>
+        <!-- No from-view-id; Applying rule to all pages -->
+        <navigation-case>
+            <from-outcome>Fail</from-outcome>
+            <to-view-id>/errorPage.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <!-- Rule from Exception-Page to index -->
+    <navigation-rule>
+        <from-view-id>/errorPage.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>Success</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+</faces-config>
