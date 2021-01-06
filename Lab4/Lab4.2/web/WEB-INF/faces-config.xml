@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+    <navigation-rule>
+        <from-view-id>/index.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>Success</from-outcome>
+            <to-view-id>/page2.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <!-- From page 2 to page 3 -->
+    <navigation-rule>
+        <from-view-id>/page2.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>Success</from-outcome>
+            <to-view-id>/page3.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <!-- From page 3 to home page -->
+    <navigation-rule>
+        <from-view-id>/page3.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>Success</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <!-- From any failed page to exception page -->
+    <navigation-rule>
+        <!-- No from-view-id -->
+        <navigation-case>
+            <from-outcome>Fail</from-outcome>
+            <to-view-id>/errorPage.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule> 
+    
+    <!-- From exception page to home page -->
+    <navigation-rule>
+        <from-view-id>/errorPage.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>Success</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+</faces-config>
